@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Liverailsapp</title>
+  <%= stylesheet_link_tag "//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" %>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"%>
+  <%= csrf_meta_tags %>
+  <%= yield :js_head %>
+  </head>
+  <body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h1>Live Rails App</h1>
+    </div>
+    <div class="col-md-6">
+      <% if current_user %>
+        <p>Logged in as <%=@current_user.name%></p>
+      <%= link_to 'Logout', logout_path, :method=>:delete %>
+    <% else %>
+        <%= link_to 'Login', '/auth/facebook' %>
+    <% end %>
+    </div>
+  </div>
+  <div class="row">
+  <%= yield %>
+  </div>
+
+  </div>
+  </body>
+</html>

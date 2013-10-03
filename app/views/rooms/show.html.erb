@@ -1,0 +1,23 @@
+<% content_for :js_head do %>
+  <script type="text/javascript">
+    window.room_name = "<%=@room.name%>";
+  </script>
+<% end %>
+<div class='col-md-8'>
+  <div class="chat-screen">
+    <p> Chat text goes here</p>
+  </div>
+  <div class="chat-input">
+    <%= text_field_tag :chat_text %>
+  </div>
+</div>
+<div class='col-md-4'>
+  <div class="participants">
+    <ul>
+      <li>Some</li>
+      <li>randome</li>
+      <li>people</li>
+      <li>Some</li>
+    </ul>
+  </div>
+</div>

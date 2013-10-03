@@ -1,0 +1,9 @@
+<div class='col-md-12'>
+<h2>Displaying Rooms</h2>
+<% if current_user %>
+  <ul>
+  <%= render @rooms %>
+</ul>
+<%= link_to 'New Room', new_room_path %>
+<% end %>
+</div>
